@@ -15,7 +15,7 @@
 
 # **TERRAFORM:**
 - Terraform is an open source Infrastructure as Code tool developed by Hashicrop.
-- It allows you to define, provision(process of creating and setting up environment) and manage the cloud and on-premises infrastructure using an Hashicrop Configuration Language.
+- It allows you to define, provision(process of creating and setting up environment) and manage the cloud and on-premises infrastructure using an Configuration Language.
 
 ## advantages:
 
@@ -37,3 +37,26 @@ The Process of managing and provisioning the cloud resources through the machine
 
 - A domain specific language used to define infrastructure as code, primarly tools like Terraform, OpenTofu.
 - It is designed to be human-readable while enabling structured data generation.
+
+## Terraform Workflow:
+
+1. Init:
+    + to prepare the current working directory for use with Terraform.
+    + download providers and initialize backend.
+2. Validate:
+    + Validate the syntax and configuration of Terraform files.
+3. Plan:
+    + Create an execution plan showing what Terraform will do.
+    + Shows what resources will be created, modified, or destroyed.
+    + Builds dependency graph to determine execution order.
+    ### output symbols
+    * "+" = Resource will be created.
+    * "~" = Resource will be modified.
+    * "-" = Resource will be destroyed
+4. Apply:
+    + Apply the changes required to reach the desired state.
+    + Updates the state file with current infrastructure state.
+5. Destroy:
+    + Destroy all resources managed by Terraform.
+    + Removes resources in reverse dependency order.
+    + Updates state file to reflect destroyed resources
