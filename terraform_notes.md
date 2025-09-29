@@ -76,7 +76,11 @@ The Process of managing and provisioning the cloud resources through the machine
 
 ## How terraform works?
 
-![Terraform working process](https://medium.com/@impradeep.techie/terraform-architecture-overview-structure-and-workflow-fdc60697941a)
+<p align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*bJzMGdZBo0zKfbvQ" 
+       alt="Terraform Architecture" 
+       style="width:500px; height:auto;" />
+</p>
 
 1. Terraform configuration file:
     + Terraform configuration file contains definiton of Infrastructure as Code resources that terraform will manage.
