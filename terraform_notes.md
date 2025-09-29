@@ -1,7 +1,13 @@
 
 ## Table of Content
-- [Traditional Infrastructure management approach](#Traditional Infrastructure management approach)
+- [Traditional approach](#Traditional-Infrastructure-management-approach)
     - [Disadvantages](#Disadvantages)
+- [Terraform](#TERRAFORM)
+    - [advantages](#advantages)
+- [IaC](#what-is-infrastructure-as-code)
+    - [Key benifits](#key-benifits)
+- [HCL](#hclhashicrop-configuration-language)
+- [Terraform workflow](#terraform-workflow)
 
 # Traditional Infrastructure management approach:
 1. Manual console management - web based interface, point and click, form based configuration
