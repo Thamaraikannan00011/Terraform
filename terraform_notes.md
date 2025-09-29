@@ -8,6 +8,8 @@
     - [Key benifits](#key-benifits)
 - [HCL](#hclhashicrop-configuration-language)
 - [Terraform workflow](#terraform-workflow)
+- [Terraform architecture](#how-terraform-works)
+- [API](#apiapplication-programming-interface)
 
 # Traditional Infrastructure management approach:
 1. Manual console management - web based interface, point and click, form based configuration
@@ -71,3 +73,32 @@ The Process of managing and provisioning the cloud resources through the machine
     + Destroy all resources managed by Terraform.
     + Removes resources in reverse dependency order.
     + Updates state file to reflect destroyed resources
+
+## How terraform works?
+
+![Terraform working process](https://medium.com/@impradeep.techie/terraform-architecture-overview-structure-and-workflow-fdc60697941a)
+
+1. Terraform configuration file:
+    + Terraform configuration file contains definiton of Infrastructure as Code resources that terraform will manage.
+    + This file is written in HCL which is designed to be human-readable and easy to write.
+    + It uses ***.tf*** file extension.
+
+2. Terraform Core:
+    + Terraform core is statically compiled binary written in "GO" language.
+    + It uses RPC(Remote Procedure calls) to communicate with terraform plugins.
+    + The compiled binary is a command line tool called ***terraform***.
+
+3. Terraform State file:
+    + State file are crucial for terraform operations and track the current state of your infrastructure.
+    + Maintains records of what terraform created and manages.
+    + contains sensitive data, requiring careful security considerations.
+
+4. Terraform Providers:
+    + Terraform providers are plugins that enables terraform to interact with the cloud platform through the APIs.
+    + Plugins authentication with infrastructure provider.
+    + defines managed resources and data sources that map to specific services.
+
+## API(Application Programming Interface):
+
++ API is a set of rules and protocols that allows different software to communicate with each other.
++ It defines how requests and responses should be structured between systems, acting ike intermediatory that enables different programs to interact and exchange data.
