@@ -5,13 +5,13 @@
 
 ## Disadvantages:
 
-a. Error prone process.
-b. Inconsistency.
-c. More time required.
-d. Scaling challenges(adding new resources requires repeating manual process).
-e. Limited collaboration.
-f. No change tracking.
-g. Poor documentation(configuration exist only in peoples mind).
+1. Error prone process.
+2. Inconsistency.
+3. More time required.
+4. Scaling challenges(adding new resources requires repeating manual process).
+5. Limited collaboration.
+6. No change tracking.
+7. Poor documentation(configuration exist only in peoples mind).
 
 # **TERRAFORM:**
 - Terraform is an open source Infrastructure as Code tool developed by Hashicrop.
@@ -24,8 +24,7 @@ g. Poor documentation(configuration exist only in peoples mind).
 - State mangement.
 
 ## What is Infrastructure as Code?
-
-    The Process of managing and provisioning the cloud resources through the machine-readable definition files, rather than physical hardware configuration.
+The Process of managing and provisioning the cloud resources through the machine-readable definition files, rather than physical hardware configuration.
 
 ### Key benifits:
 + consistency - same infra every time.
