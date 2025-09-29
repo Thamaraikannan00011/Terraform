@@ -1,3 +1,8 @@
+
+## Table of Content
+- [Traditional Infrastructure management approach](#Traditional Infrastructure management approach)
+    - [Disadvantages](#Disadvantages)
+
 # Traditional Infrastructure management approach:
 1. Manual console management - web based interface, point and click, form based configuration
 2. Script based automation - shell scripts with CLI commands, custom automation for repetitive task.
