@@ -97,6 +97,36 @@ The Process of managing and provisioning the cloud resources through the machine
 + API is a set of rules and protocols that allows different software to communicate with each other.
 + It defines how requests and responses should be structured between systems, acting ike intermediatory that enables different programs to interact and exchange data.
 
+## Provider:
+- Provider are plugin that enables terraform to interact with cloud services providers.
+- They act as a bridge between Terraform and External systems that you want to manage.
+- Providers are declared in Terraform using a provider block, where configuration settings such as access keys, credentials, and regions are specified.
+
+### What provider do:
+1. Download - while we run ***terraform init*** command it downloads the required plugin to communicate.
+2. Authenticate - With the cloud services provider based on credentials (environment variables, config files, etc.).
+3. Translate - It converts HCL (HashiCorp Configuration Language) configuration into API calls for the target platform.
+
+### How the Provider Works:
+
+```mermaid
+graph TD
+    A[HCL Configuration] --> B[Terraform Core<br/>RPC]
+    B --> C[AWS Provider Plugin]
+    C --> D[AWS API Calls<br/>Translate HCL → API]
+    D --> E[Create/Manage<br/>AWS Resources]
+```
+### Example:
+
+```
+    provider <"aws"> {
+        region = <region>
+        # defining security credentials in provider is not good practice. use config file/set them as env
+        access_key = <access key id>
+        secret_key = <secret key>
+    }
+```
+
 ## Variables:
 - Variables are the primary way to parameterize the terraform configuration.
 - They act as a parameters to customize the infrastructure without modifying the original code.
