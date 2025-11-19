@@ -127,6 +127,67 @@ graph TD
     }
 ```
 
+## Resource block:
+- A resource block in Terraform is a fundamental component used to define and manage infrastructure objects like virtual machines, databases, networks, and more.
+- Each resource block tells Terraform what to create, update, or delete in your cloud or on-premises environment.
+
+### What resource do:
+- resource block specifies the type of infrastructure object (e.g., aws_instance, azurerm_virtual_network) and a unique name for each resource.
+- Resource behavior:
+    * Create: Terraform creates the resource if it does not exist.
+    * Update in-place: If you change the value of resource attributes, Terraform updates the resource accordingly.
+    * Destroy: If you remove the block from your configuration, Terraform destroys the resource.
+    * Destroy and re-create: Some changes require Terraform to destroy and recreate the resource, such as changing properties that cannot be updated directly.
+
+### Example:
+```
+    resource "resource_type" "resource_name" {
+        # configuration attributes
+        attribute1 = value1
+        attribute2 = value2
+    }
+```
+
+### Basic Configuration:
+```
+    terraform {
+        required_version = ">= 1.0"
+        required_providers {
+            aws = {
+                source = "hashicorp/aws"
+                version = "~> 5.0"
+            }
+        }
+    }
+
+    provider "aws" {
+        region = us-east-1
+        access_key = oiiew2312ncjwqr
+        secret_key = fsfajkesu2394
+    }
+
+    resource "aws_instance" "first-instance" {
+        
+        # REQUIRED
+        ami             = "ami-0ruw943023i349324"
+        instance_type   = "t3.micro"
+
+        # OPTIONAL
+        key_name        = "Instance-Key"
+        subnet_id       = "subnet-uie298834u983"
+        security_groups = ["sg-db3y89hjecha89w"]
+        count           = 3 # to create n no of machine 
+
+        # Tags
+        tags = {
+            Name        = "web-server-01"
+            Environment = "production"
+            Team        = "platform"
+        }
+
+    }
+```
+
 ## Variables:
 - Variables are the primary way to parameterize the terraform configuration.
 - They act as a parameters to customize the infrastructure without modifying the original code.
