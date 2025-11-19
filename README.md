@@ -149,21 +149,24 @@ graph TD
 ```
 
 ### Basic Configuration:
+
+- ***AWS EC2-Instance***
+
 ```
     terraform {
         required_version = ">= 1.0"
         required_providers {
             aws = {
-                source = "hashicorp/aws"
+                source  = "hashicorp/aws"
                 version = "~> 5.0"
             }
         }
     }
 
     provider "aws" {
-        region = us-east-1
-        access_key = oiiew2312ncjwqr
-        secret_key = fsfajkesu2394
+        region          = us-east-1
+        access_key      = oiiew2312ncjwqr
+        secret_key      = fsfajkesu2394
     }
 
     resource "aws_instance" "first-instance" {
@@ -187,6 +190,25 @@ graph TD
 
     }
 ```
+
+- ***AWS S3-Bucket***
+
+```
+    provider "aws" {
+        region          = "us-east-1"
+    }
+
+    resource "aws_s3_bucket" "my-bucket" {
+        # REQUIRED
+        bucket_name     = "my-aws-unique-bucket-001"
+        
+        tags = {
+            Name        = "My Bucket"
+            Environment = "production"
+        }
+    }
+```
+
 
 ## Variables:
 - Variables are the primary way to parameterize the terraform configuration.
